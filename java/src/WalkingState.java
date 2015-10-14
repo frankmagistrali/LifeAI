@@ -2,7 +2,9 @@ package src;
 
 import com.sun.istack.internal.NotNull;
 
-public class WalkingState {
+public class WalkingState extends GrazerState {
+
+
 
     public void WalkingState(Grazer g) {
 //        int[][] l = getLand();
@@ -10,13 +12,13 @@ public class WalkingState {
 //        int nGraz = getNumGrazers();
 //        int nearest = nearestGrazer(g, nGraz, grazers);
 //
-//        if (nearest != -1 && (g.full >= 40 && grazers[nearest].full >= 40)) {
+//        if (nearest != -1 && (g.fullness >= 40 && grazers[nearest].fullness >= 40)) {
 //            if (g.sex + grazers[nearest].sex == 1) {
 //                if (g.breedTime == 0 && grazers[nearest].breedTime == 0) {
 //                    if (legalMove(g.iPos + 1, g.jPos, nGraz, grazers, l)) {
 //                        newGrazer(g.iPos + 1, g.jPos);
-//                        g.full -= 20;
-//                        grazers[nearest].full -= 20;
+//                        g.fullness -= 20;
+//                        grazers[nearest].fullness -= 20;
 //                        if (g.sex == 0) {
 //                            g.breedTime = 30;
 //                            grazers[nearest].breedTime = 10;
@@ -27,13 +29,13 @@ public class WalkingState {
 //                    }
 //                }
 //            }
-//        } else if (nearest != -1 && g.full > 30) {
+//        } else if (nearest != -1 && g.fullness > 30) {
 //            move(g, directionOfNearestGrazer(g, nearestGrazer(g, nGraz, grazers), grazers), nGraz, grazers, l);
 //            //System.out.println("following");
-//        } else if (l[g.iPos][g.jPos] > 0 && g.full < 70) {
+//        } else if (l[g.iPos][g.jPos] > 0 && g.fullness < 70) {
 //            g.currentState = "eatingState";
 //            grazeState.GrazerState(g);
-//        } else if (g.full < 50) {
+//        } else if (g.fullness < 50) {
 //
 //            move(g, directionOfNearestGrass(g, l), nGraz, grazers, l);
 //        } else {

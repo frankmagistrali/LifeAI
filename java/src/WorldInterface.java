@@ -13,7 +13,6 @@ public interface WorldInterface {
     double distance(int i, int j, int x, int y);
 
 //    int[][]     land       = new int[worldSizeLength][worldSizeLength];
-    GrazerState grazeState = new GrazerState();
     //Grazer[] grazers=new Grazer[100];
     public int hat = 8;
 

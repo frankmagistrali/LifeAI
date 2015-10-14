@@ -1,7 +1,34 @@
 package src;
 
 
-public class WanderingState {
+import com.sun.istack.internal.NotNull;
+
+public class WanderingState extends GrazerState{
+
+    @Override
+    public void updateGrazerState(@NotNull Grazer grazer) {
+        super.updateGrazerState(grazer);
+//                Grazer[] grazers = getGrazers();
+//                int nGraz = getNumGrazers();
+//                int nearest = nearestGrazer(g, nGraz, grazers);
+//                int dist = distanceToNearestGrazer(g, nearest);
+//                if (g.fullness < 40) {
+//                    g.currentState = "walkingState";
+//                    g.wandering = null;
+//                    grazeState.GrazerState(g);
+//                } else if (nearest != -1 && dist > 150) {
+//                    g.currentState = "walkingState";
+//                    g.currentState = "walkingState";
+//                    g.wandering = null;
+//                    grazeState.GrazerState(g);
+//                } else if (nearest != -1 && grazers[nearest].currentState == "wanderingState") {
+//                    g.wandering = grazers[nearest].wandering;
+//                    move(g, direction, nGraz, grazers, l);
+//                } else {
+//                    move(g, direction, nGraz, grazers, l);
+//                }
+
+    }
 
     public void WanderingState(Grazer g, String direction) {
 //        int[][] l = getLand();
@@ -9,7 +36,7 @@ public class WanderingState {
 //        int nGraz = getNumGrazers();
 //        int nearest = nearestGrazer(g, nGraz, grazers);
 //        int dist = distanceToNearestGrazer(g, nearest);
-//        if (g.full < 40) {
+//        if (g.fullness < 40) {
 //            g.currentState = "walkingState";
 //            g.wandering = null;
 //            grazeState.GrazerState(g);

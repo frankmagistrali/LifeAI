@@ -29,29 +29,30 @@ import java.util.function.Consumer;
  */
 @Data
 public class WorldSpace {
-    private int     i;
-    private int     j;
+    private int     drawX;
+    private int     drawY;
     private TerrainType terrainType = TerrainType.LAND;
     private boolean nearWater = false;
+    private boolean containsCritter = false;
     private int     grass;
-    private ICritter critter = null;
+//    private ICritter critter = null;
     private List<WorldSpace> neighborSpaces = newArrayList();
     private boolean updateGraphics = true;
     private int index;
 
-    public WorldSpace(int iIndex, int jIndex) {
-        i = iIndex;
-        j = jIndex;
-    }
+//    public WorldSpace(int iIndex, int jIndex) {
+//        i = iIndex;
+//        j = jIndex;
+//    }
 
     public WorldSpace(int index) {
         this.index = index;
     }
 
-    public static WorldSpace voidSpace() {
-        WorldSpace voidSpace = new WorldSpace(-1);
-        voidSpace.setTerrainType(TerrainType.VOID);
-        return voidSpace;
+    public WorldSpace(int index, int drawX, int drawY) {
+        this.index = index;
+        this.drawX = drawX;
+        this.drawY = drawY;
     }
 
     public void increaseGrass() {
@@ -61,7 +62,13 @@ public class WorldSpace {
         } else {
             setGrass(getGrass() + 1);
         }
-    };
+    }
+
+    public static WorldSpace nullSpace() {
+        WorldSpace nullSpace = new WorldSpace(-1, -1, -1);
+        nullSpace.setTerrainType(TerrainType.VOID);
+        return nullSpace;
+    }
 
 //    public void maybeGrowGrass() {
 //        if (isNearWater()) {

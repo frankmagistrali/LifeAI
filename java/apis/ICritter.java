@@ -20,5 +20,7 @@ package apis;
  * @author [Frank Magistrali] - fmagistrali@thetus.com
  */
 public interface ICritter {
-//    ICritterState state
+    //TODO: not totally convinced I need this interface, but we'll see.
+    int getSex();
+    ICritter update();
 }

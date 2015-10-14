@@ -14,11 +14,15 @@
  */
 package apis;
 
+import com.sun.istack.internal.NotNull;
+import src.Grazer;
+
 /**
  * TODO - add class description here
  *
  * @author [Frank Magistrali] - fmagistrali@thetus.com
  */
 public interface IGrazerState {
+    void updateGrazerState(@NotNull final Grazer grazer);
 
 }

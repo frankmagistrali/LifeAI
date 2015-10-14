@@ -1,38 +1,31 @@
 package src;
 
-public class GrazerState {
+import apis.IGrazerState;
+import com.sun.istack.internal.NotNull;
+import lombok.Data;
 
-    RunningState   run    = new RunningState();
-    EatingState    eat    = new EatingState();
-    WalkingState   walk   = new WalkingState();
-    WanderingState wander = new WanderingState();
+@Data
+public class GrazerState implements IGrazerState {
 
-    void update(Grazer g) {
-        if (g.alive) {
-            if (g.age - g.full > 300 || g.full <= 0) {
-                g.alive = false;
-                System.out.println("died of: " + "age=" + g.age + " full=" + g.full);
-            }
-            GrazerState(g);
-            g.full--;
-            g.age++;
-            if (g.breedTime > 0) {
-                g.breedTime--;
-            }
+    @Override
+    public void updateGrazerState(@NotNull Grazer grazer) {
+        if (grazer.isAlive()) {
+
         }
     }
 
-    void GrazerState(Grazer g) {
 
-        if (g.currentState == "eatingState") {
-            eat.EatingState(g);
-        } else if (g.currentState == "runningState") {
-            run.RunningState(g);
-        } else if (g.currentState == "walkingState") {
-            walk.WalkingState(g);
-        } else if (g.currentState == "wanderingState") {
-            wander.WanderingState(g, g.wandering);
-        }
-    }
+    //    void GrazerState(Grazer grazer) {
+//
+//        if (grazer.currentState == "eatingState") {
+//            eat.EatingState(grazer);
+//        } else if (grazer.currentState == "runningState") {
+//            run.RunningState(grazer);
+//        } else if (grazer.currentState == "walkingState") {
+//            walk.WalkingState(grazer);
+//        } else if (grazer.currentState == "wanderingState") {
+//            wander.WanderingState(grazer, grazer.wandering);
+//        }
+//    }
 
 }
